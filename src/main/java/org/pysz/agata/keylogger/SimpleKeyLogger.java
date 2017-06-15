@@ -65,12 +65,12 @@ public class SimpleKeyLogger {
 	new GlobalKeyListener().addKeyListener(new KeyAdapter() {
 	    @Override
 	    public void keyPressed(KeyEvent event) {
-                
+                System.out.println(event.toString());
 		loggerPanel.appendTextToPanel(event.toString());
 	    }
-
 	    @Override
 	    public void keyReleased(KeyEvent event) {
+                System.out.println(event.toString());
 		loggerPanel.appendTextToPanel(event.toString());
 		if (event.getVirtualKeyCode() == KeyEvent.VK_ADD && event.isCtrlPressed())
 		    loggerPanel.appendTextToPanel("CTRL+ADD was just released (CTRL is still pressed)");
